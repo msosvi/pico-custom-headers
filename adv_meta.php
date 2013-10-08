@@ -45,13 +45,9 @@ class Adv_Meta {
         foreach ($this->meta_values as $key => $value) {
             $headers[$key] = $value;
         }
-
-        //var_dump($headers);
     }
 
     public function get_page_data(&$data, $page_meta) {
-
-        //$data = array_merge($data, $this->adv_file_meta()) ;
 
         foreach ($page_meta as $key => $value) {
             $data[$key] = $value ;

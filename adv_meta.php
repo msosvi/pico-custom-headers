@@ -49,8 +49,8 @@ class Adv_Meta {
 
     public function get_page_data(&$data, $page_meta) {
 
-        foreach ($page_meta as $key => $value) {
-            $data[$key] = $value ;
+        foreach ($this->meta_values as $key => $value) {
+          $data[$key] = $page_meta[$key] ;
         }
     }
 

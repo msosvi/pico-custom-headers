@@ -8,7 +8,7 @@
  * @author Shawn Sandy <shawnsandy04@gmail.com>
  *
  */
-class Adv_Meta {
+class Pico_Custom_Headers {
 
     private /* default custom headers */
             $custom_headers = array(

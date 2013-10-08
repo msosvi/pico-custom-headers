@@ -1,71 +1,62 @@
-Pico adv-meta
-========
+Pico Custom Headers
+===================
 
-A simple plugin to extend and add any values to the page header, makes it easy to customize page meta -- until Pico adds this option by default.
+A simple plugin based on Pico adv-meta to add any values to the page header, makes it easy to customize page meta (until Pico adds this option by default).
 
-`
-<pre>
-/*
+    /*
     Title: Sample Page
     Author:
     Date: 2013/07/18
     Status: Draft
     Category: Featured
     Robots: none
-*/
-</pre>
-`
+    */
 
 Installation
 -------------
 
 1. Copy the plugin file/folder the plugins directory of your Pico site.
-2. Open the pico config.php and insert add your custom meta values or use the plugin default -- (slug,category,status,type,thumbnail,icon,tpl).
-3. Add the custom values to your page as you would normally
+2. Open the pico config.php and insert your custom headers or use the plugin default (slug,category,status,type,thumbnail,icon,tpl).
+3. Add the custom values to your page as you would normally.
 4. They can now be accessed in themes as regular meta values {{ meta.category }}
 
-#### Sample with Default adv_meta_values, copy to your config and modify
-`
-<pre>
-    $config['adv_meta_values'] = array(
-    //page slug keep lower case
-    'slug' => 'Slug',
-    //page category
-    'category' => 'Category',
-    //page status
-    'status' => 'Status',
-    //Type -- page, post, plugin
-    'type' => 'Type',
-    //Page Thumbnail -- (theme/images)
-    'thumbnail' => 'Thumbnail',
-    // image for page icon -- (theme/images/)
-    'icon' => 'Icon',
-    //use custom page template(s)
-    'tpl' => 'Tpl'
-</pre>
-`
+#### Sample with default custom headers, copy to your config and modify:
+
+    $config['custom_headers'] = array(
+        //page slug keep lower case
+        'slug' => 'Slug',
+        //page category
+        'category' => 'Category',
+        //page status
+        'status' => 'Status',
+        //Type -- page, post, plugin
+        'type' => 'Type',
+        //Page Thumbnail -- (theme/images)
+        'thumbnail' => 'Thumbnail',
+        // image for page icon -- (theme/images/)
+        'icon' => 'Icon',
+        //use custom page template(s)
+        'tpl' => 'Tpl' );
+
 
 #### Access the meta in page loops;
 
-````
-{% for page in pages %}
-{% if page.date %}
-<!-- Note we check for Date field (posts) here -->
-<aside>
-<h1 class=""><a href="{{ page.url }}">{{ page.title }}</a></h1>
-    <p class="">{{ page.excerpt }}</p>
-    <p>Meta- Values : Type - {{ page.type }} - Slug - {{ page.slug }}</p>
-</aside>
-{% endif %}
-{% endfor %}
-````
+    {% for page in pages %}
+        {% if page.date %}
+          <!-- Note we check for Date field (posts) here -->
+          <aside>
+              <h1 class=""><a href="{{ page.url }}">{{ page.title }}</a></h1>
+                  <p class="">{{ page.excerpt }}</p>
+                  <p>Meta- Values : Type - {{ page.type }} - Slug - {{ page.slug }}</p>
+          </aside>
+        {% endif %}
+    {% endfor %}
+
 
 License
 -------
 
 ### Released under the MIT license.
-
-Copyright (c) <year> <copyright holders>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

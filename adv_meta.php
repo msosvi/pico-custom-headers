@@ -10,8 +10,8 @@
  */
 class Adv_Meta {
 
-    private /* default meta values */
-            $meta_values = array(
+    private /* default custom headers */
+            $custom_headers = array(
                 //page slug keep lower case
                 'slug' => 'Slug',
                 //page category
@@ -36,21 +36,21 @@ class Adv_Meta {
 
     public function config_loaded(&$settings) {
 
-        if (isset($settings['custom_meta_values']))
-            $this->meta_values = $settings['custom_meta_values'];
+        if (isset($settings['custom_headers']))
+            $this->custom_headers = $settings['custom_headers'];
     }
 
     public function before_read_file_meta(&$headers) {
 
-        foreach ($this->meta_values as $key => $value) {
-            $headers[$key] = $value;
+        foreach ($this->custom_headers as $field => $regex) {
+            $headers[$field] = $regex;
         }
     }
 
     public function get_page_data(&$data, $page_meta) {
 
-        foreach ($this->meta_values as $key => $value) {
-          $data[$key] = $page_meta[$key] ;
+        foreach ($this->custom_headers as $field => $regex) {
+          $data[$field] = $page_meta[$field] ;
         }
     }
 

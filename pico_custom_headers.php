@@ -1,11 +1,11 @@
 <?php
 
 /**
- * The file description. *
+ * Pico Custom Headers Plugin 
  * @package Pico
- * @subpackage Adv meta
- * @version 0.1.3
- * @author Shawn Sandy <shawnsandy04@gmail.com>
+ * @version 0.0.1
+ * @author Miguel Angel Sosvilla Luis
+ * @author Shawn Sandy <shawnsandy04@gmail.com> (Adv Meta Plugin)
  *
  */
 class Pico_Custom_Headers {
